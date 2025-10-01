@@ -220,14 +220,24 @@ button {
         width: 60%;
     }
 
-    .head div:last-child {
+    .head .chapter {
         width: 60%;
         right: 0px;
         position: absolute;
         right: 0px;
         top: 50%;
         background-color: var(--color_white);
-        padding: 2rem;
+        padding-top: 2rem;
+        padding-left: 5rem;
+    }
+    
+    .head .chapter p,
+    .head .chapter h2 {
+        text-align: left;
+    }
+
+    .head .chapter p {
+        margin-bottom: 0;
     }
 
     .create {
