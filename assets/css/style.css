@@ -37,7 +37,7 @@ header {
     margin: 0 auto;
 }
 
-/* nav bar */
+/* Menu bar */
 
 .menuContainer {
     display: flex;
@@ -50,6 +50,16 @@ nav ul {
     display: none;
     color: var(--color_white);
     gap: 1rem;
+}
+
+nav ul li {
+    padding-bottom: 0.4rem;
+}
+
+nav ul li:hover {
+    cursor: pointer;
+    padding-bottom: 0.2rem;
+    border-bottom: 0.2rem solid var(--color_white);
 }
 
 nav div {
@@ -123,6 +133,14 @@ nav div {
     font-weight: 300;
 }
 
+.card:hover {
+    filter:brightness(2.0) grayscale(1.0) sepia(1.0);
+}
+
+.card:hover + .card div:first-child {
+    color: var(--color_black);
+}
+
 .creations {
     position: relative;
 }
@@ -157,9 +175,8 @@ footer {
     color: var(--color_white);
 }
 
-footer .logo {
+.footerContainer .leftside .logo {
     margin-bottom: 2rem;
-
 }
 
 .footerContainer {
@@ -179,9 +196,29 @@ footer .logo {
     margin-bottom: 2rem;
 }
 
+.footerContainer .leftside ul li {
+    padding-bottom: 0.4rem;
+}
+
+.footerContainer .leftside ul li:hover {
+    cursor: pointer;
+    padding-bottom: 0.2rem;
+    border-bottom: 0.2rem solid var(--color_white);
+}
+
 .footerContainer .socialnetworks {
     display: flex;
     gap: 1rem;
+}
+
+.footerContainer .socialnetworks div {
+    padding-bottom: 0.5rem;
+    border-bottom: 0.2rem solid var(--color_black);
+}
+
+.footerContainer .socialnetworks div:hover {
+    border-bottom: 0.2rem solid white;
+    cursor: pointer;
 }
 
 .footerContainer .copyright {
@@ -190,10 +227,18 @@ footer .logo {
 }
 
 button {
+    position: relative;
     padding: 0.8rem 3rem;
     background-color: var(--color_white);
     text-transform: uppercase;
     letter-spacing: 0.2rem;
+    z-index: 1;
+}
+
+button:hover {
+    background-color: var(--color_black);
+    color: var(--color_white);
+    cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
@@ -230,7 +275,7 @@ button {
         padding-top: 2rem;
         padding-left: 5rem;
     }
-    
+
     .head .chapter p,
     .head .chapter h2 {
         text-align: left;
@@ -296,28 +341,40 @@ button {
     }
 
     .footerContainer {
+        padding-bottom: 5rem;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-between;
     }
 
-    .footerContainer .leftside {
+    .footerContainer .leftside,
+    .footerContainer .rightside {
+        height: 5rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+    }
+
+    .footerContainer .leftside {
         align-items: flex-start;
+    }
+
+    .footerContainer .rightside {
+        align-items: flex-end;
+    }
+
+    .footerContainer .leftside .logo {
+        margin-bottom: 0;
     }
 
     .footerContainer .leftside ul {
         display: flex;
         gap: 1rem;
+        margin-bottom: 0;
     }
 
-    .footerContainer .rightside {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-end;
+    .footerContainer .rightside .copyright {
+        margin: 0;
     }
 }
