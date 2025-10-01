@@ -1,0 +1,301 @@
+@import url("./reset.css");
+
+@font-face {
+    font-family: "alata";
+    src: url("../font/Alata-Regular.ttf");
+}
+
+@font-face {
+    font-family: "josefin";
+    src: url("../font/JosefinSans-VariableFont_wght.ttf");
+}
+
+* {
+    font-family: "alata";
+    font-weight: 400;
+    font-size: 15px;
+}
+
+body {
+    --color_white: hsl(0, 0%, 100%);
+    --color_black: hsl(0, 0%, 0%);
+    --color_darkgray: hsl(0, 0%, 55%);
+    --color_verydarkgray: hsl(0, 0%, 41%);
+}
+
+header {
+    background-image: url("../img/mobile/image-hero.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    padding-top: 3rem;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* nav bar */
+
+.menuContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+    align-items: center;
+}
+
+nav ul {
+    display: none;
+    color: var(--color_white);
+    gap: 1rem;
+}
+
+nav div {
+    display: block;
+}
+
+/* Main title section */
+
+.bigtitle {
+    position: absolute;
+    color: var(--color_white);
+    border: 0.2rem solid var(--color_white);
+    padding: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.bigtitle h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-family: "josefin";
+}
+
+/* main section */
+
+.head {
+    margin-top: 8em;
+}
+
+.head .chapter {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.head .chapter h2 {
+    font-family: "josefin";
+    font-size: 2rem;
+    margin: 2rem 0;
+    text-transform: uppercase;
+}
+
+.head .chapter p {
+    line-height: 2rem;
+    margin-bottom: 3rem;
+}
+
+.cardcontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    position: relative;
+}
+
+.card div:first-child {
+    position: absolute;
+    font-size: 2rem;
+    color: var(--color_white);
+    left: 2rem;
+    bottom: 2rem;
+    text-transform: uppercase;
+    font-family: "josefin";
+    font-weight: 300;
+}
+
+.creations h2 {
+    font-size: 2rem;
+    font-family: "josefin";
+    font-weight: 300;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+}
+
+.create {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+/* Footer section */
+
+footer {
+    padding-top: 3rem;
+    background-color: var(--color_black);
+    color: var(--color_white);
+}
+
+footer .logo {
+    margin-bottom: 2rem;
+
+}
+
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footerContainer .rightside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footerContainer .leftside ul {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.footerContainer .socialnetworks {
+    display: flex;
+    gap: 1rem;
+}
+
+.footerContainer .copyright {
+    color: var(--color_darkgray);
+    margin: 2rem 0;
+}
+
+button {
+    padding: 0.8rem 3rem;
+    background-color: var(--color_white);
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+@media screen and (min-width: 768px) {
+    nav ul {
+        display: flex;
+    }
+
+    nav div {
+        display: none;
+    }
+
+    .bigtitle {
+        width: 60%;
+        left: unset;
+        transform: translate(0, -50%);
+    }
+
+    .head {
+        position: relative;
+        margin-bottom: 20rem;
+    }
+
+    .head div:first-child {
+        width: 60%;
+    }
+
+    .head div:last-child {
+        width: 60%;
+        right: 0px;
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        background-color: var(--color_white);
+        padding: 2rem;
+    }
+
+    .creations h2 {
+        text-align: left;
+    }
+
+    .create {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .cardcontainer {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .cardcontainer .card {
+        width: 23%;
+    }
+
+    .card:nth-child(1) img {
+        content: url("../img/desktop/image-deep-earth.jpg");
+    }
+
+    .card:nth-child(2) img {
+        content: url("../img/desktop/image-night-arcade.jpg");
+    }
+
+    .card:nth-child(3) img {
+        content: url("../img/desktop/image-soccer-team.jpg");
+    }
+
+    .card:nth-child(4) img {
+        content: url("../img/desktop/image-grid.jpg");
+    }
+
+    .card:nth-child(5) img {
+        content: url("../img/desktop/image-from-above.jpg");
+    }
+
+    .card:nth-child(6) img {
+        content: url("../img/desktop/image-pocket-borealis.jpg");
+    }
+
+    .card:nth-child(7) img {
+        content: url("../img/desktop/image-curiosity.jpg");
+    }
+
+    .card:nth-child(8) img {
+        content: url("../img/desktop/image-fisheye.jpg");
+    }
+
+    .card div:first-child {
+        font-size: 1.6rem;
+    }
+
+    .footerContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .footerContainer .leftside {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .footerContainer .leftside ul {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .footerContainer .rightside {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
