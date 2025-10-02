@@ -46,10 +46,18 @@ header {
     align-items: center;
 }
 
+nav {
+    position: relative;
+}
+
 nav ul {
     display: none;
+    position: absolute;
+    background-color: var(--color_black);
     color: var(--color_white);
-    gap: 1rem;
+    top: 100%;
+    right: 0;
+    padding: 2rem 5rem 1rem 1rem;
 }
 
 nav ul li {
@@ -62,8 +70,34 @@ nav ul li:hover {
     border-bottom: 0.2rem solid var(--color_white);
 }
 
-nav div {
+nav input,
+nav label {
     display: block;
+}
+
+header #openmenu {
+    display: none;
+}
+
+header .menu input[type="checkbox"]:checked~ul {
+    display: block;
+
+    img {
+        content: url("../img/icon-close.svg");
+    }
+
+}
+
+header .menu input[type="checkbox"]~ul {
+    display: none;
+}
+
+header .menu input[type="checkbox"]~label>img {
+    content: url("../img/icon-hamburger.svg");
+}
+
+header .menu input[type="checkbox"]:checked~label>img {
+    content: url("../img/icon-close.svg");
 }
 
 /* Main title section */
@@ -134,10 +168,10 @@ nav div {
 }
 
 .card:hover {
-    filter:brightness(2.0) grayscale(1.0) sepia(1.0);
+    filter: brightness(2.0) grayscale(1.0) sepia(1.0);
 }
 
-.card:hover + .card div:first-child {
+.card:hover+.card div:first-child {
     color: var(--color_black);
 }
 
@@ -243,13 +277,27 @@ button:hover {
 
 @media screen and (min-width: 768px) {
     nav ul {
+        position: unset;
+        display: flex;
+        gap: 1rem;
+        background-color: unset;
+        padding: unset;
+    }
+
+    header .menu input[type="checkbox"]~ul {
         display: flex;
     }
 
-    nav div {
+    nav input,
+    nav label {
         display: none;
     }
 
+    /*
+    nav div {
+        display: none;
+    }
+*/
     .bigtitle {
         width: 60%;
         left: unset;
